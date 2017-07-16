@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Farnost Vísky u Letovic</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    
+    .carousel {
+    position:relative;
+    width:100%;
+    filter:none;
+      transition:filter 0.5s ease-in; 
+        z-index:1;
+    } 
+     .carousel:hover{
+    filter:brightness(120%); 
+          
+     }
+    .carousel:before{
+               background:url('shape.svg') bottom center;
+    content:"";
+    position:absolute;
+    width:100%;
+    left:0;
+    height:70px;
+    bottom:0;
+      z-index:10000000 !important; 
+    }
+    body{
+    background-color:rgb(234, 234, 225);
+    font-family:beatrix;
+    border-top:1px solid #e7e7e7;
+    letter-spacing:1.5px;
+    }
+    li{
+    list-style-type:none;
+    }
+    .top_bar{
+            min-height:45px;
+              display: flex;
+                align-items: center;
+                   position:fixed;top:0;left:0; 
+                   width:100%;  
+                  background-color:transparent;   
+                  z-index:20;  
+                  overflow:visible;
+                
+             }
+             
+             #logo{
+             display:block;
+                padding-left:15px; 
+                color:white;
+                font-family:beatrix;
+                font-weight:bold;
+                font-size:25px;
+                float:right;
+                text-transform:uppercase;
+               }
+               .carousel-caption{
+              margin: auto;
+   text-align: center;  
+                bottom:50px;
+                opacity:0;
+                      font-family:beatrix; 
+                         }
+              .carousel-caption > h3{
+               text-transform:uppercase;
+               font-weight:bold;
+               font-size:80px;
+               text-align:center;
+               
+               }
+               .carousel-caption > p{
+                font-size:15px;
+               }
+                  
+               
+nav.main_menu{
+  display:inline-block;
+}
+                   .top_bar > .active{
+                        box-shadow:0px 1px 20px black;
+                   }
+                  .carousel-indicators li{
+                  margin-right:auto;
+                  width:5px;
+                  height:5px;
+                  border-radius:0px;
+                   margin:0;
+                  background: rgba(40,190,235,0.8);
+               
+                  border:0px solid white;
+                  }
+                  .carousel-indicators li.active{
+                  width:5px;
+                  height:5px;
+                  border-radius:0px;
+                  border:0px solid rgba(255,255,255,0.9);
+                margin:1px;
+                -moz-box-shadow:    inset 0 0 5px rgba(40,190,235,0.8);
+   -webkit-box-shadow: inset 0 0 5px rgba(40,190,235,0.8);
+   box-shadow:         inset 0 0 5px rgba(40,190,235,0.8);
+                background:white;
+                  }
+
+             .navbar-default{
+                  margin:0;padding:0;
+                  margin-left:8px;
+                  margin-right:8px;
+                          background: rgba(0, 0, 0, 0); 
+                border-radius:0;
+                border:0px #337ab7;
+             }
+             .navbar-default .navbar-nav > li > a{color:white; transition: box-shadow .5s ease-in-out;   
+             }
+             .navbar-default .navbar-nav > li > a:hover{color:rgb(95, 95, 221);  
+             box-shadow:0px 3px 0px 0px #e7e7e7 inset;
+              
+             }
+             li.active a{
+                  background-color: #e7e7e7;
+    animation-name: example;
+    animation-duration: .4s;
+                
+             }
+             
+               @keyframes example {
+    from {background-color: rgba(255, 255, 255, 0.5);}
+    to {background-color: #e7e7e7;}
+}
+                  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+   width: 100%;    
+}    
+             #myCarousel{
+            /* width:100%;
+            padding-top:0px;
+             min-height:100px;
+                       */
+             }
+             #loading{
+             
+    border: 3px solid #f3f3f3; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+    z-index:30;
+    position:absolute;
+   /* justify-align:middle;  */
+    display:block;
+}       
+
+
+  #sec{
+  
+  padding:10px;
+  color:black;
+   
+  
+  overflow:auto;
+  }
+ #body{
+ background: rgba(255, 255, 255,1);
+ }  
+       
+  
+  
+  .intra_box{
+        margin:auto;
+        width:90%;
+        padding:5px;
+              
+  }
+  section{
+ /* border-top:1px solid silver;    */
+  min-height:200px;
+  }
+  footer{
+  min-height:100px;
+  overflow:hidden; 
+  background:   rgba(0, 0, 0, 0.9);
+  border-top:1px  solid white;
+  height:auto;
+  
+  color:white;
+  padding:10px;
+  width:100%;
+  }
+  footer > h2{
+  font-size:20px;
+  text-transform:uppercase;
+  }
+      .box{
+      float:left;
+      padding:10px;
+      margin:10px;
+      width:30%;
+     
+      
+       background: rgb(234, 234, 225,0.0);/*0.2*/
+       
+        /*border:1px solid silver;
+        border-radius:2px;
+         */
+      overflow-wrap: break-word;
+      overflow:auto;
+      
+      } 
+      h1.inner_box{
+      text-shadow:none;
+      }
+      .box > .inner_box{
+       background:rgba(200,200,200,0.0);   /*0.4*/ 
+        font-family:beatrix;
+       padding:10px;
+       margin:5px;
+      overflow-wrap: break-word;
+      overflow:auto;
+      }
+      h1.inner_box{font-weight:bold;}
+       
+    h2{
+    color:white;
+    font-size:18px;
+    }
+  h1{
+  font-size:20px;
+  
+  font-weight:normal;
+  text-shadow:2px 2px 35px black;
+  padding:5px;
+  margin:0;
+  text-transform:uppercase;
+  
+  }    
+  td{padding:3px;}
+  td:nth-child(odd){
+  font-weight:bold;
+  text-transform:uppercase;
+  }
+  button.prm{
+  border-radius:0px;
+  border:1px white solid;
+  background:transparent;
+  padding:8px;
+  
+  
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:white;
+  width:150px;
+   text-align:center;
+   transition: background-color 0.5s ease;
+   transition: color 0.2s ease;
+   margin:10px;
+    display:block;
+   
+  }
+  button.prm:hover{
+        background:white;
+        color:black;
+  }
+  .intra_box > h1{
+  color:white;
+  font-size:26px;
+  
+         
+  text-transform:uppercase;
+  font-weight:300;
+  margin:5px;
+  padding:5px;
+   text-align:center;
+  }
+  #bar{
+  position:relative;
+  padding-top:70px;
+  padding-bottom:70px;
+  font-family:beatrix;
+  }
+  #bar::after{
+       background:url('shape.svg') bottom center;
+    content:"";
+    position:absolute;
+    width:100%;
+    left:0;
+    height:70px;
+    bottom:0;
+     z-index:19;
+  }
+  #bar::before{
+         background:url('shape1.svg') top center;
+    content:"";
+    position:absolute;
+    width:100%;
+    left:0px;
+    height:70px;
+    top:0px;
+     z-index:19;
+  }   
+  #bar > h2{
+  color:white;
+  font-size:28px;
+  font-family:Calibri;
+  font-weight:300;
+  letter-spacing:4px;
+   margin:0;
+  padding:5px;
+   text-align:center;
+  }
+  
+  .event{
+      display:inline-block;
+  }
+  .event > h2{
+  text-align:center;
+  }
+  .event img{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  }
+       .op{
+       position: relative;
+        
+       }
+       .op:after{
+        content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+     background:rgba(0,0,0,0.3);
+    
+       }
+.after_scrolling{
+  background-color: black;  
+     box-shadow:0px 1px 20px black;  
+      animation: changClr 1s;
+    
+   }
+ .stop_scrolling{
+  background-color: transparent;  
+     box-shadow:none;  
+      animation: changClr 1s alternate;
+    
+   }  
+   
+       @media only screen and (max-width: 895px) {
+  .box {
+  clear:both;
+     margin:0;
+  width:100%;
+  }
+  
+  
+ 
+  
+  }
+  
+     @font-face {
+    font-family: logoFont;
+    src: url(font/logo-ce.otf);
+}
+
+         @font-face {
+    font-family: beatrix;
+    src: url(font/galette-med.otf);
+    
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 
+ @media screen and (min-width: 768px) {
+    .carousel-indicators{
+   
+      bottom:25px;    
+      left:30%;
+      width:30px;
+      padding:10px;
+      background:transparent;
+      border-radius:0 1px 1px 0;
+   
+  }          }
+ @keyframes changClr {
+   from { background-color: transparent; }
+    to{ background-color: black;
+     box-shadow:0px 1px 20px black;    }
+}   /*  .carousel .item.left img{
+    width: 100% !important;    
+}                        */
+             </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+                            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery-3.2.1.js"></script>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+  </head>
+ <body data-spy="scroll" data-target=".navbar" data-offset="100">
+  <script>      
+  
+                  
+
+                                      
+  
+                           /*    $("header").hover(function(){
+          $("header").css("background","rgba(0, 0, 0, 1");
+          },function(){
+             $("header").css("background","rgba(0, 0, 0, 0.5");
+          };
+    }
+  */          
+
+  
+  var navbar=$("header.top_bar");
+                  $(window).scroll(function (event) {
+                 
+    var scroll = $(window).scrollTop();
+    
+    if(scroll>50){ 
+      
+     
+    
+      $(".top_bar").addClass("after_scrolling");
+      
+      //alert("sd");
+             }
+      else{
+    $(".top_bar").removeClass("after_scrolling");
+      
+         //$("header").css("background","transparent");
+         //$("header").css("box-shadow","none");
+     } });     
+
+                  function changer(){
+                //  window.alert("sds");
+                                      this.style.height="300px";
+                  }
+           $(document).ready(function(){
+                                   $(".top").hover(function(){
+                                    $(".carousel-indicators li").fadeIn(); 
+                                    $(".carousel-caption").fadeTo("slow",1);
+                                   },function(){
+                                   
+                                    $(".carousel-indicators li").fadeOut();   $(".carousel-caption").fadeOut();
+                                    $(this).fadeTo("slow",1);
+                                   });
+                              $('[data-toggle="tooltip"]').tooltip(); 
+    $('body').scrollspy({target: ".navbar", offset: 100});   
+});
+
+</script>
+<!--<div id="loading">
+</div>-->
+
+  <div class="top">
+    <header class="bg-primary top_bar">
+      <span id="logo">Farnost Vísky</span>    
+      <nav class="navbar navbar-default bg-primary" id="menu" role="navigation" >
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar" >
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#carouselExampleIndicators">Úvod</a></li>
+            <!--  <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#sec">Page 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Page 1-1</a></li>
+                  <li><a href="#">Page 1-2</a></li>
+                  <li><a href="#">Page 1-3</a></li>
+                </ul>
+              </li>-->
+              <li><a href="#sec">Section 2</a></li>
+              <li><a href="#bar">Section 3</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="15000">
+  <!-- Indicators -->
+  <ol class="carousel-indicators carousel-square">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="img/kostel_SZ.jpg" alt="">
+      <div class="carousel-caption">
+        <h3>Kostel sv. Michala ve Vískách </h3>
+        <p>zima 2016/17</p>
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/kostel2.jpg" alt="">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="img/kostel_3.jpg" alt="">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+       <div class="item">
+      <img src="img/visky.jpg" alt="">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>   </section>
+</div>
+
+  
+    <div id="body">
+    <section id="sec">
+    <div class="alert alert-info alert-dismissable fade in">
+     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Info!</strong> Vítejte na webu farnosti Vísky u Letovic. 
+</div>
+   
+                    <div class="intra_box">
+                 <div class="box">
+                 <h1 class="inner_box">Bohoslužby</h1>
+                 <div class="inner_box">
+                 <ul>
+                 <li> Středa -  16:15</li>
+                 <li>Pátek - 16:00</li>
+                 <li> Neděle - 8:00</li>
+                 </ul>
+                 </div>
+                 </div>
+                 
+                 <div class="box">
+                 <h1 class="inner_box">Ohlášky</h1>
+                 </div> 
+                 <div class="box">
+                 <h1 class="inner_box">Kontakty</h1>
+                 <div class="inner_box">
+                  <table>
+                 <tr><td>Adresa</td><td>679 33 Vísky 24</td></tr>
+<tr><td>Telefon</td><td> 733 741 416</td></tr>
+<tr><td>E-mail</td><td>visky@dieceze.cz</td></tr>
+<tr><td>IČ</td><td>65339550</td></tr> 
+</table>
+</div>
+                 </div>  
+                  </div>    
+       </section>
+       <section id="bar" style="background: rgba(40,190,235,1);
+background: -moz-linear-gradient(left, rgba(40,190,235,1) 0%, rgba(120,204,232,1) 46%, rgba(74,162,191,1) 100%);border:0">
+           <div class="intra_box" style="height:100%">
+           <h1>Blízké události</h1>
+                      <div class="event">
+                       
+                        <a href="#" data-toggle="tooltip" data-placement="top" title="Celostátní setkání mládeže 2017 v Olomouci"> <img src="img/csm.png" width="100"></a>
+                        <h2>22.- 26. srpna </h2>
+                        <button type="button" class="prm">Více</button>
+                      </div>
+           
+                                  </div>
+       </section>
+       <section >
+                sdsdsa
+       </section>
+    <aside>hjhmj</aside>
+    </div>
+    <footer>
+    <h2>Lorem ipsum</h2>
+    </footer>
+    
+                  
+  
+  </body>
+</html>
